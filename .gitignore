@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+fresco-*/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+chatbot*.log
+
+# Test files
+test_*.py
+*_test*.py
+
+# Temporary files
+*.tmp
+*.temp
+extracted_*.png
+test_*.png
+test_*.json
+*.tmp.json
+
+# Documentation/analysis files
+*.md
+!README.md
+*.ipynb
+CHECKPOINT_*
+SESSION_*
+VECTOR_DB_*
+FRESCO_*
+
+# API Keys (NEVER COMMIT)
+api_key
+s3_aws_key.txt
+
+# Docker files (keep docker-compose.yml)
+Dockerfile.*
+
+# Unused vector databases
+embeddings/
+embeddings_hybrid/
+embeddings_v2_vlm/
+test_embeddings/
+insane_vector_db/
+ground_truth_vector_database/
+
+# Analysis outputs
+architectural_predictions_v2/
+ground_truth_visualizations/
+vlm_*.json
+*_stats.json
+*_summary.json
+*_results.json
+
+# Scripts
+scripts/
+
+# Zip files
+*.zip
+
+# Specific unused files
+analyze_vector_db.py
+insane_multimodal_vectordb.py
+*_eval_pipeline.py
+*_chatbot.py
+openai_rag_backend.py
+vlm_*.py

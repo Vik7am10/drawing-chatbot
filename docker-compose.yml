@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CHROMA_PERSIST_DIRECTORY=/app/embeddings
+      - UPLOAD_DIRECTORY=/app/data/images
+    volumes:
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+    depends_on:
+      - chromadb
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - API_BASE_URL=http://backend:8000
+    depends_on:
+      - backend
+
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./embeddings:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+
+volumes:
+  embeddings:
+  data:
