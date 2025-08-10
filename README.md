@@ -125,7 +125,6 @@ Main query endpoint for architectural document analysis.
 
 ### Vector Databases
 
-- **Text Embeddings**: `embeddings_advanced_working/` - BGE-based text search
 - **Image Database**: `image_vectordb/` - Source architectural images
 - **Extracted Vectors**: `vectordb_extracted/` - Pre-processed embeddings
 
@@ -187,7 +186,3 @@ The system provides detailed logging for debugging:
 - Intent classification
 - Vision analysis status
 - RAG retrieval information
-
-## License
-
-[Add your license here]
